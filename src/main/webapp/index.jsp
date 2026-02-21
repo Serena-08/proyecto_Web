@@ -1,83 +1,36 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<!doctype html>
+<html lang="es" class="h-100">
 <head>
-   <title>Inicio</title>
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
-          <div class="container">
-              <a class="navbar-brand fw-bold" href="#"><i class="bi bi-chat-quote-fill"></i> SeedNow </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                  <ul class="navbar-nav">
-                      <li class="nav-item"><a class="nav-link" href="#features"> Características </a></li>
-                      <li class="nav-item ms-lg-3">
-                          <a href="app.jsp" class="btn btn-primary rounded-pill px-4"> Ir a la App </a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DrawIt! | Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css">
+  </head>
 
-      <header class="hero-section text-center text-white d-flex align-items-center">
-          <div class="container">
-              <div class="row justify-content-center">
-                  <div class="col-lg-8">
-                      <h1 class="display-3 fw-bold mb-4"> Gestiona todas tus redes desde un solo lugar </h1>
-                      <p class="lead mb-5 text-white-50">
-                          Programa mensajes para WhatsApp, Instagram y LinkedIn en segundos.
-                          Optimiza tu tiempo y deja que nuestro bot haga el trabajo duro.
-                      </p>
-                      <a href="app.jsp" class="btn btn-light btn-lg rounded-pill px-5 fw-bold text-primary shadow">
-                          <i class="bi bi-rocket-takeoff me-2"></i> Comenzar Ahora
-                      </a>
-                  </div>
-              </div>
-          </div>
-      </header>
+<body class="d-flex flex-column h-100">
+    <jsp:include page="header.jsp" />
+    <main class="container flex-fill mt-5 pt-4">
 
-      <section id="features" class="py-5">
-          <div class="container my-5">
-              <div class="row text-center">
-                  <div class="col-md-4 mb-4">
-                      <div class="feature-card p-4 h-100 bg-white shadow-sm rounded">
-                          <div class="icon-box mb-3 text-success">
-                              <i class="bi bi-whatsapp display-4"></i>
-                          </div>
-                          <h4 class="fw-bold">WhatsApp Marketing</h4>
-                          <p class="text-muted">Envía recordatorios y promociones directamente a los chats de tus clientes.</p>
-                      </div>
-                  </div>
-                  <div class="col-md-4 mb-4">
-                      <div class="feature-card p-4 h-100 bg-white shadow-sm rounded">
-                          <div class="icon-box mb-3 text-danger">
-                              <i class="bi bi-instagram display-4"></i>
-                          </div>
-                          <h4 class="fw-bold">Feed de Instagram</h4>
-                          <p class="text-muted">Mantén tu feed activo programando fotos y descripciones con antelación.</p>
-                      </div>
-                  </div>
-                  <div class="col-md-4 mb-4">
-                      <div class="feature-card p-4 h-100 bg-white shadow-sm rounded">
-                          <div class="icon-box mb-3 text-primary">
-                              <i class="bi bi-linkedin display-4"></i>
-                          </div>
-                          <h4 class="fw-bold">LinkedIn </h4>
-                          <p class="text-muted">Publica ofertas de trabajo y noticias corporativas en el horario laboral perfecto.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-
-      <footer class="bg-dark text-white text-center py-4">
-          <div class="container">
-              <p class="mb-0">&copy; 2025 SeedNow. Todos los derechos reservados.</p>
-          </div>
-      </footer>
-
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <c:if test="${not empty mensajeExito}">
+            <div class="alert alert-success text-dark" role="alert">
+                ${mensajeExito}
+            </div>
+        </c:if>
+            <div class="text-center p-5 rounded-3">
+                <h1 class="display-4">¡Bienvenido a DrawIt!</h1>
+                <p class="lead">Explorá el mural para ver las creaciones de otros artistas o subí la tuya</p>
+            <hr class="my-4">
+                <a class="btn btn-primary btn-lg" href="muralDibujos.jsp" role="button">Ver el Mural</a>
+                <a class="btn btn-primary btn-lg" href="formDibujo.jsp" role="button">Subir un Dibujo</a>
+        </div>
+    </main>
+    <%@ include file="footer.jsp" %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
 </body>
 </html>

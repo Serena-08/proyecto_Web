@@ -1,6 +1,7 @@
 package org.progI.entities;
 
 public class Usuario {
+
   private int idUsuario;
   private String nombre;
   private String apellido;
@@ -8,8 +9,21 @@ public class Usuario {
   private String telefono;
   private String contrasenia;
 
-  public Usuario() {idUsuario = - 1;}
+  // 1. Constructor Vacío (Obligatorio para muchos frameworks/DAOs)
+  public Usuario(){}
 
+  // 2. Constructor PARA CREAR (Sin ID)
+  // Usamos este cuando el usuario se registra en la app, antes de ir a la BD.
+  public Usuario(String nombre, String apellido, String email, String telefono, String contrasenia) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.email = email;
+    this.telefono = telefono;
+    this.contrasenia = contrasenia;
+  }
+
+  // 3. Constructor COMPLETO (Con ID)
+  // Usamos este cuando TRAEMOS el usuario desde la BD (porque ya tiene ID).
   public Usuario(int idUsuario, String nombre, String apellido, String email, String telefono, String contrasenia) {
     this.idUsuario = idUsuario;
     this.nombre = nombre;
@@ -20,7 +34,6 @@ public class Usuario {
   }
 
   //Getters y Setters
-
 
   public int getIdUsuario() {return idUsuario;}
 
@@ -42,9 +55,9 @@ public class Usuario {
 
   public void setTelefono(String telefono) {this.telefono = telefono;}
 
-  public String getcontrasenia() {return contrasenia;}
+  public String getContrasenia() {return contrasenia;}
 
-  public void setcontrasenia(String contrasenia) {this.contrasenia = contrasenia;}
+  public void setContrasenia(String contrasenia) {this.contrasenia = contrasenia;}
 
   @Override
   public String toString() {
@@ -55,6 +68,7 @@ public class Usuario {
         ", email='" + email + '\'' +
         ", telefono='" + telefono + '\'' +
         ", contrasenia='" + contrasenia + '\'' +
+        //contrasenia='***'" + // TIP: Por seguridad, evitar imprimir la contraseña en el toString
         '}';
   }
 }

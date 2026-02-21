@@ -1,15 +1,15 @@
 package org.progI.entities;
 
-public class Mensajes {
+public class Mensaje {
   private int idMensaje;
-  private int mensaje;
+  private String mensaje;
   private int fecha;
   private int hora;
   private String destinatario;
   private Plataforma plataforma;
 
 
-  public Mensajes(int mensaje, int fecha, int hora, String destinatario, Plataforma plataforma){
+  public Mensaje(String mensaje, int fecha, int hora, String destinatario, Plataforma plataforma){
     this.mensaje = mensaje;
     this.fecha = fecha;
     this.hora = hora;
@@ -17,7 +17,7 @@ public class Mensajes {
     this.plataforma = plataforma;
   }
 
-  public Mensajes() { idMensaje = -1;}
+  public Mensaje(){}
 
   //Getters y Setters
  /*
@@ -28,9 +28,9 @@ public class Mensajes {
 
   public void setIdMensaje(int idMensaje) {this.idMensaje = idMensaje;}
 
-  public int getMensaje() {return mensaje;}
+  public String getMensaje() {return mensaje;}
 
-  public void setMensaje(int mensaje) {this.mensaje = mensaje;}
+  public void setMensaje(String mensaje) {this.mensaje = mensaje;}
 
   public int getFecha() {return fecha;}
 
@@ -55,14 +55,16 @@ o modificando el comportamiento de un metodo heredado de su superclase o interfa
  */
 
 @Override
-  public String toString(){
-  return "Mensajes{" +
+  public String toString() {
+  return "Mensaje{" +
       "idMensaje=" + idMensaje +
       ", mensaje='" + mensaje + '\'' +
       ", fecha='" + fecha + '\'' +
       ", hora='" + hora + '\'' +
       ", destinatario='" + destinatario + '\'' +
-      ", plataforma='" + plataforma;
+      ", plataforma='" + plataforma +
+      '}';
+
 
 }
 

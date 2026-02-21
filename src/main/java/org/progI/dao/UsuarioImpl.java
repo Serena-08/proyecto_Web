@@ -64,7 +64,7 @@ public class UsuarioImpl implements AdmConexion, DAO<Usuario, Integer> {
         usuario.setApellido(rs.getString("apellido"));
         usuario.setEmail(rs.getString("email"));
         usuario.setTelefono(rs.getString("telefono"));
-        usuario.setcontrasenia(rs.getString("contrasenia"));
+        usuario.setContrasenia(rs.getString("contrasenia"));
 
         listaUsuarios.add(usuario);
       }
@@ -94,7 +94,7 @@ public class UsuarioImpl implements AdmConexion, DAO<Usuario, Integer> {
       pst.setString(2, usuario.getApellido());
       pst.setString(3, usuario.getEmail());
       pst.setString(4, usuario.getTelefono());
-      pst.setString(5, usuario.getcontrasenia());
+      pst.setString(5, usuario.getContrasenia());
 
       int resultado = pst.executeUpdate();
       if (resultado == 1){
@@ -126,7 +126,7 @@ public class UsuarioImpl implements AdmConexion, DAO<Usuario, Integer> {
         pst.setString(2, usuario.getApellido());
         pst.setString(3, usuario.getEmail());
         pst.setString(4, usuario.getTelefono());
-        pst.setString(5, usuario.getcontrasenia());
+        pst.setString(5, usuario.getContrasenia());
 
         int resultado = pst.executeUpdate();
         if (resultado == 1){
@@ -186,7 +186,8 @@ public class UsuarioImpl implements AdmConexion, DAO<Usuario, Integer> {
         usuario.setNombre(rs.getString("nombre"));
         usuario.setApellido(rs.getString("apellido"));
         usuario.setEmail(rs.getString("email"));
-        usuario.setcontrasenia(rs.getString("contrasenia"));
+        usuario.setTelefono(rs.getString("telefono"));
+        usuario.setContrasenia(rs.getString("contrasenia"));
       }
 
       rs.close();
