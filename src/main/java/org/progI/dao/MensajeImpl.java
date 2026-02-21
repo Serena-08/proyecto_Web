@@ -71,7 +71,7 @@ public class MensajeImpl implements AdmConexion, DAO<Mensaje, Integer> {
     PreparedStatement pst = null;
     try {
       pst = conn.prepareStatement(SQL_INSERT);
-      pst.setInt(1, objeto.getMensaje());
+      pst.setString(1, objeto.getMensaje());
       pst.setInt(2, objeto.getFecha());
       pst.setInt(3, objeto.getHora());
       pst.setString(4, objeto.getDestinatario());
@@ -96,7 +96,7 @@ public class MensajeImpl implements AdmConexion, DAO<Mensaje, Integer> {
       PreparedStatement pst = null;
       try {
         pst = conn.prepareStatement(SQL_UPDATE);
-        pst.setInt(1, objeto.getMensaje());
+        pst.setString(1, objeto.getMensaje());
         pst.setInt(2, objeto.getFecha());
         pst.setInt(3, objeto.getHora());
         pst.setString(4, objeto.getDestinatario());
