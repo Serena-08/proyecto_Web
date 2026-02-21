@@ -6,17 +6,17 @@ public class Usuario {
   private String apellido;
   private String email;
   private String telefono;
-  private String contraenia;
+  private String contrasenia;
 
   public Usuario() {idUsuario = - 1;}
 
-  public Usuario(int idUsuario, String nombre, String apellido, String email, String telefono, String contraenia) {
+  public Usuario(int idUsuario, String nombre, String apellido, String email, String telefono, String contrasenia) {
     this.idUsuario = idUsuario;
     this.nombre = nombre;
     this.apellido = apellido;
     this.email = email;
     this.telefono = telefono;
-    this.contraenia = contraenia;
+    this.contrasenia = contrasenia;
   }
 
   //Getters y Setters
@@ -42,9 +42,9 @@ public class Usuario {
 
   public void setTelefono(String telefono) {this.telefono = telefono;}
 
-  public String getContraenia() {return contraenia;}
+  public String getcontrasenia() {return contrasenia;}
 
-  public void setContraenia(String contraenia) {this.contraenia = contraenia;}
+  public void setcontrasenia(String contrasenia) {this.contrasenia = contrasenia;}
 
   @Override
   public String toString() {
@@ -54,7 +54,7 @@ public class Usuario {
         ", apellido='" + apellido + '\'' +
         ", email='" + email + '\'' +
         ", telefono='" + telefono + '\'' +
-        ", contraenia='" + contraenia + '\'' +
+        ", contrasenia='" + contrasenia + '\'' +
         '}';
   }
 }
