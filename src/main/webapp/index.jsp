@@ -1,36 +1,97 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page isELIgnored="false" %>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-
-<!doctype html>
-<html lang="es" class="h-100">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DrawIt! | Inicio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css">
-  </head>
+    <meta charset="UTF-8">
+    <title>Inicio - Sistema Web</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .dashboard-container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 { color: #333; margin-bottom: 10px; }
+        p { color: #666; margin-bottom: 30px; }
 
-<body class="d-flex flex-column h-100">
-    <jsp:include page="header.jsp" />
-    <main class="container flex-fill mt-5 pt-4">
+        /* Contenedor de las tarjetas del menú */
+        .menu-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-        <c:if test="${not empty mensajeExito}">
-            <div class="alert alert-success text-dark" role="alert">
-                ${mensajeExito}
-            </div>
-        </c:if>
-            <div class="text-center p-5 rounded-3">
-                <h1 class="display-4">¡Bienvenido a DrawIt!</h1>
-                <p class="lead">Explorá el mural para ver las creaciones de otros artistas o subí la tuya</p>
-            <hr class="my-4">
-                <a class="btn btn-primary btn-lg" href="muralDibujos.jsp" role="button">Ver el Mural</a>
-                <a class="btn btn-primary btn-lg" href="formDibujo.jsp" role="button">Subir un Dibujo</a>
+        /* Estilo de cada tarjeta/botón */
+        .card {
+            background: #fff;
+            border: 1px solid #e1e4e8;
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #007BFF;
+        }
+
+        .card h3 { margin: 10px 0; color: #007BFF; }
+        .card span { font-size: 30px; display: block; margin-bottom: 10px; }
+
+        .footer { margin-top: 40px; font-size: 12px; color: #999; }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <h1>Bienvenido al Sistema</h1>
+        <p>Selecciona una opción para comenzar a trabajar</p>
+
+        <div class="menu-grid">
+
+            <a href="gestionUsuarios.jsp" class="card">
+                <span>👥</span>
+                <h3>Usuarios</h3>
+                <small>Registrar, Listar y Eliminar Usuarios</small>
+            </a>
+
+            <a href="gestionMensajes.jsp" class="card">
+                <span>💬</span>
+                <h3>Mensajes</h3>
+                <small>Enviar y Ver Historial de Mensajes</small>
+            </a>
+
+            <a href="#" class="card" onclick="alert('Sistema funcionando correctamente. Base de datos: MySQL');">
+                <span>⚙️</span>
+                <h3>Configuración</h3>
+                <small>Ver estado de conexión</small>
+            </a>
+
         </div>
-    </main>
-    <%@ include file="footer.jsp" %>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+
+        <div class="footer">
+            Proyecto Web Java - Desarrollado por [Tu Nombre]
+        </div>
+    </div>
+
 </body>
 </html>
