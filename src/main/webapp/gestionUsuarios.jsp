@@ -35,7 +35,7 @@
 
         <div class="form-box">
             <h3>Nuevo Usuario</h3>
-            <form action="usuarioServlet" method="post">
+            <form action="UsuarioServlet" method="post">
                 <input type="hidden" name="operacion" value="nuevo">
 
                 <label>Nombre:</label><br>
@@ -91,7 +91,7 @@
                         <td><%= u.getEmail() %></td>
                         <td><%= u.getTelefono() %></td>
                         <td>
-                            <form action="usuarioServlet" method="post" style="display:inline;">
+                            <form action="UsuarioServlet" method="post" style="display:inline;">
                                 <input type="hidden" name="operacion" value="eliminar">
                                 <input type="hidden" name="idUsuario" value="<%= u.getIdUsuario() %>">
                                 <button type="submit" class="btn-delete" onclick="return confirm('¿Seguro que quieres borrar este usuario?');">Eliminar</button>

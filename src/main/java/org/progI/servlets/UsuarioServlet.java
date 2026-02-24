@@ -1,6 +1,16 @@
-package org.progI.servelets;
+package org.progI.servlets;
 
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.progI.dao.UsuarioImpl;
+import org.progI.entities.Usuario;
+import org.progI.interfaces.DAO;
+
+import java.io.IOException;
 
 /*
 ¿Qué son los Servlets?
@@ -14,19 +24,8 @@ Son la base de muchas aplicaciones web Java, como Java EE / Jakarta EE.
  */
 
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import org.progI.dao.UsuarioImpl;
-import org.progI.entities.Usuario;
-import org.progI.interfaces.DAO;
-
-import java.io.IOException;
-
 // Definimos la URL que invocará el formulario
+@WebServlet("/UsuarioServlet")
 public class UsuarioServlet extends HttpServlet {
 
   private DAO<Usuario, Integer> usuarioDAO = new UsuarioImpl();
@@ -35,6 +34,9 @@ public class UsuarioServlet extends HttpServlet {
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     // Configuramos la codificación para que acepte tildes y ñ
     req.setCharacterEncoding("UTF-8");
+    req.setAttribute("mensaje", "Hola desde el servlet del Proyecto");
+
+    System.out.println("Inicio servlet seUsuario");
 
     // 1. OBTENER LA OPERACIÓN (¿Qué quiere hacer el usuario?)
     // Puede ser: "nuevo", "editar", "eliminar"
@@ -45,7 +47,7 @@ public class UsuarioServlet extends HttpServlet {
     String apellido = req.getParameter("apellido");
     String email = req.getParameter("email");
     String telefono = req.getParameter("telefono");
-    String contrasenia = req.getParameter("contrasenia");
+    String contrasenia = req.getParameter("contrasenia"); //Borrar
 
     // ID para editar o eliminar (viene como String, hay que pasarlo a int)
     int idUsuario = -1;

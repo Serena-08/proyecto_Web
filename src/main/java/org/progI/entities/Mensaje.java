@@ -54,22 +54,18 @@ La anotación @override en java, sirve para indicar explícitamente que un metod
 o modificando el comportamiento de un metodo heredado de su superclase o interfaz
  */
 
-@Override
+  @Override
   public String toString() {
-  return "Mensaje{" +
-      "idMensaje=" + idMensaje +
-      ", mensaje='" + mensaje + '\'' +
-      ", fecha='" + fecha + '\'' +
-      ", hora='" + hora + '\'' +
-      ", destinatario='" + destinatario + '\'' +
-      ", plataforma='" + plataforma +
-      '}';
+    return "Mensaje{" +
+        "idMensaje=" + idMensaje +
+        ", mensaje='" + mensaje + '\'' +
+        ", fecha='" + fecha + '\'' +
+        ", hora='" + hora + '\'' +
+        ", destinatario='" + destinatario + '\'' +
+        ", plataforma='" + plataforma +
+        '}';
 
+
+  }
 
 }
-
-}
-
-
-
-

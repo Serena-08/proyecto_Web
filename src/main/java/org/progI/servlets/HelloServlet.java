@@ -1,4 +1,4 @@
-package org.progI.servelets;
+package org.progI.servlets;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
