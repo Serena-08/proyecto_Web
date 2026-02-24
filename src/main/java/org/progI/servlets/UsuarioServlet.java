@@ -25,7 +25,6 @@ Son la base de muchas aplicaciones web Java, como Java EE / Jakarta EE.
 
 
 // Definimos la URL que invocará el formulario
-@WebServlet("/UsuarioServlet")
 public class UsuarioServlet extends HttpServlet {
 
   private DAO<Usuario, Integer> usuarioDAO = new UsuarioImpl();

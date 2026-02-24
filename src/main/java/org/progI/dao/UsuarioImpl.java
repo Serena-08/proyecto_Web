@@ -23,12 +23,12 @@ public class UsuarioImpl implements AdmConexion, DAO<Usuario, Integer> {
 
   //ver porque va el final, o preguntarle a ara para que es
   private static final String SQL_INSERT =
-      "INSERT INTO usuarios (nombre, apellido, email, telefono, contraseña)" +
+      "INSERT INTO usuario (nombre, apellido, email, telefono, contrasenia)" +
       "VALUES (?, ?, ?, ?, ?)";
 
 
   private static final String SQL_UPDATE =
-      "UPDATE usuarios SET " +
+      "UPDATE usuario SET " +
           "nombre = ?, " +
           "apellido = ?, " +
           "email = ?, " +
@@ -52,7 +52,7 @@ public class UsuarioImpl implements AdmConexion, DAO<Usuario, Integer> {
     PreparedStatement pst = null;
     ResultSet rs = null;
 
-    List<Usuario> listaUsuarios = new ArrayList();
+    List<Usuario> listausuario = new ArrayList();
 
     try {
       pst = conn.prepareStatement(SQL_GETALL);
@@ -66,7 +66,7 @@ public class UsuarioImpl implements AdmConexion, DAO<Usuario, Integer> {
         usuario.setTelefono(rs.getString("telefono"));
         usuario.setContrasenia(rs.getString("contrasenia"));
 
-        listaUsuarios.add(usuario);
+        listausuario.add(usuario);
       }
 
       //cierro
@@ -77,7 +77,7 @@ public class UsuarioImpl implements AdmConexion, DAO<Usuario, Integer> {
       System.out.println("Error al obtener todos los datos del usuario");
       throw new RuntimeException(e);
     }
-    return listaUsuarios;
+    return listausuario;
   }
 
   @Override
