@@ -98,14 +98,14 @@ public class UsuarioServlet extends HttpServlet {
           System.out.println("Usuario actualizado ID: " + idUsuario);
         }
 
-        resp.sendRedirect("listaUsuarios.jsp"); // Redirige a la lista para ver cambios
+        resp.sendRedirect("gestionUsuarios.jsp"); // Redirige a la lista para ver cambios
       }
 
       // --- CASO 3: ELIMINAR ---
       else if ("eliminar".equals(operacion)) {
         usuarioDAO.delete(idUsuario);
         System.out.println("Usuario eliminado ID: " + idUsuario);
-        resp.sendRedirect("listaUsuarios.jsp");
+        resp.sendRedirect("gestionUsuarios.jsp");
       }
 
     } catch (Exception e) {
