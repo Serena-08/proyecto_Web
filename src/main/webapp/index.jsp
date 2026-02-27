@@ -30,8 +30,8 @@
             <a href="#" class="card" onclick="alert('Sistema funcionando correctamente. Base de datos: MySQL');">
                 <span>⚙️</span>
                 <h3>Configuración</h3>
-                <small>Enviar y Ver Historial de Mensajes <br>(PROXIMAMENTE) </small>
-                <small>Ver estado de conexión </small>
+                <small>Enviar y Ver Historial de Mensajes </small>
+                <small>Ver estado de conexión <br>(PROXIMAMENTE)</small>
             </a>
         </div>
 
