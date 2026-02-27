@@ -37,7 +37,7 @@ public class UsuarioServlet extends HttpServlet {
 
     System.out.println("Inicio servlet seUsuario");
 
-    // 1. OBTENER LA OPERACIÓN (¿Qué quiere hacer el usuario?)
+    // 1. Obtener la operacion (¿Qué quiere hacer el usuario?)
     // Puede ser: "nuevo", "editar", "eliminar"
     String operacion = req.getParameter("operacion");
 
@@ -60,13 +60,11 @@ public class UsuarioServlet extends HttpServlet {
     }
 
     try {
-      // --- CASO 1: INSERTAR NUEVO ---
+      // --- CASO 1: Insertar NUevo Usuario ---
       if ("nuevo".equals(operacion)) {
         // Creamos el usuario (sin ID, constructor para registrar)
         Usuario nuevoUser = new Usuario(nombre, apellido, email, telefono, contrasenia);
-
-        // NOTA: Aquí podrías agregar la lógica de hash de contraseña más adelante
-        // NOTA 2: Si quieres validar si el email existe, necesitas crear ese método en el DAO primero.
+        // NOTA 2: Si quiero validar si el email existe, necesito crear ese metodo en el DAO primero.
 
         usuarioDAO.insert(nuevoUser);
         System.out.println("Usuario registrado: " + email);
@@ -98,14 +96,14 @@ public class UsuarioServlet extends HttpServlet {
           System.out.println("Usuario actualizado ID: " + idUsuario);
         }
 
-        resp.sendRedirect("listaUsuarios.jsp"); // Redirige a la lista para ver cambios
+        resp.sendRedirect("gestionUsuarios.jsp"); // Redirige a la lista para ver cambios
       }
 
       // --- CASO 3: ELIMINAR ---
       else if ("eliminar".equals(operacion)) {
         usuarioDAO.delete(idUsuario);
         System.out.println("Usuario eliminado ID: " + idUsuario);
-        resp.sendRedirect("listaUsuarios.jsp");
+        resp.sendRedirect("gestionUsuarios.jsp");
       }
 
     } catch (Exception e) {

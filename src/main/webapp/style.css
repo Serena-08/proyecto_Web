@@ -1,0 +1,135 @@
+/* Estilo del Index */
+.body-index {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.dashboard-container {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de las tarjetas del menú */
+.menu-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Estilo de cada tarjeta/botón */
+.card {
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: #007BFF;
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #007BFF;
+}
+
+.card span {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 12px;
+    color: #999;
+}
+
+/*Estilo de Usuarios */
+
+.body-user{
+    font-family: sans-serif;
+    padding: 20px;
+}
+ h1 { color: #333; margin-bottom: 10px; }
+.container {
+    display: flex;
+    gap: 30px;
+}
+
+.form-box {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background: #ffc107;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.alert {
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    margin-bottom: 15px;

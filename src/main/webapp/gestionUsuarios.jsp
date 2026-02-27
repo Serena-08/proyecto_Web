@@ -7,22 +7,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css">
     <title>Prueba de Usuarios</title>
-    <style>
-        body { font-family: sans-serif; padding: 20px; }
-        .container { display: flex; gap: 30px; }
-        .form-box { background: #f4f4f4; padding: 20px; border-radius: 8px; width: 300px; }
-        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #007BFF; color: white; }
-        .btn-delete { background: #dc3545; color: white; border: none; padding: 5px 10px; cursor: pointer; }
-        .btn-edit { background: #ffc107; border: none; padding: 5px 10px; cursor: pointer; }
-        .alert { padding: 10px; background-color: #d4edda; color: #155724; border-radius: 5px; margin-bottom: 15px;}
-    </style>
 </head>
-<body>
 
-    <h1>Panel de Control: Usuarios</h1>
+<body class="body-user">
+    <h1>Panel de Control | Usuarios</h1>
 
     <%
         String mensaje = (String) request.getAttribute("mensajeExito");
@@ -105,7 +95,7 @@
                 </tbody>
             </table>
         </div>
-    </div>
+   </div>
 
 </body>
 </html>
