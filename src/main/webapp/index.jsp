@@ -6,10 +6,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/style.css">
     <title> Inicio - SeedNow</title>
 
-
 </head>
-<body class="body-index">
 
+<body class="body-index">
     <div class="dashboard-container">
         <h1>Bienvenido a SeedNow</h1>
         <p>Selecciona una opción para comenzar a trabajar</p>
